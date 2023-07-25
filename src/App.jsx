@@ -8,19 +8,19 @@ function App() {
   const [message, setMessage] = useState('');
   const [msgs, setMsgs] = useState([]);
   const chatRef = useRef();
- 
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newMessage = {
       body: message,
-      from: nameuser,
+      from: 'yo'
     }
 
     setMsgs([...msgs, newMessage]);
     socket.emit('message', message);
 
+    // Limpia el input después de enviar el mensaje
     setMessage('');
   };
 
@@ -48,7 +48,7 @@ function App() {
         <div className='chat flex-grow' ref={chatRef}>
           <ul>
             {msgs.map((msg, i) => (
-              <li key={i} className={`my-2 p-2 table text-sm rounded-md ${msg.from === 'yo' ? 'bg-zinc-600 ml-auto' : 'bg-zinc-400'}`}>
+              <li key={i} className={`my-2 p-2 table text-sm rounded-md ${msg.from === 'yo' ? 'bg-zinc-800 ml-auto' : 'bg-zinc-00'}`}>
                 <b className='text-xs text-slate-500 block'>:{msg.from}</b> <p>{msg.body}</p>
               </li>
             ))}
@@ -58,7 +58,7 @@ function App() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className='input'/>
-        <button className='boton'>Enviar</button> 
+        <button className='boton'>Enviar</button>
       </form>
     </div>
   )
