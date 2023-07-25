@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(12, 12, 12);
+    color: rgb(3, 3, 3)
+  }
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.boton {
+    background-color: rgba(165, 42, 42, 0.568);
+    height: 24px;
+    width: 60px;
+    margin-top: 0.5rem;
+  }
+  
+.input {
+    margin-top: .5rem;
+    height: 34px;
+    color: black;
+    opacity: 60%;
+    border-radius: 12px;
+  }
+  
+.chat {
+    background-color: gray;
+    border-radius: 10px;
+    height: 300px;
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+
+  
+  
+  @media screen and (max-width: 640px) {
+    .h-screen {
+      height: auto;
+    }
+
+    .chat {
+        width: 70vw;
+    }
+    
+    form {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
